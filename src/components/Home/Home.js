@@ -19,7 +19,7 @@ class Home extends Component {
   render() {
     return (
       <section className='home_route'>
-        
+        Home Page
       </section>
     );
   }
