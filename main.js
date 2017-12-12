@@ -36,6 +36,7 @@ function createWindow() {
       pathname: path.join(__dirname, 'dist', 'index.html'),
       slashes: true
     });
+    mainWindow.maximize();
   }
   mainWindow.loadURL( indexPath );
 
@@ -78,3 +79,9 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+
+//////////Example for how to built endpoints for the front end
+var userController = require("./server/userController.js");
+
+ipcMain.on('/api/authenticate', userController.authenticateUser);
